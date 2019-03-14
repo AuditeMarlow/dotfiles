@@ -209,7 +209,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -5
 bindsym XF86MonBrightnessUp exec xbacklight +5
 
 # toggle trackpad
-bindsym XF86AudioMicMute exec trackpad
+bindsym XF86AudioMicMute exec toggle-trackpad
 
 # keyboard backlight binds
 bindsym Shift+XF86MonBrightnessDown exec xbacklight -ctrl tpacpi::kbd_backlight -5
