@@ -1,0 +1,8 @@
+.php_cs.cache
+.rnd
+*tags
+*tags.lock
+*tags.temp
+*.netrwhist
+*.config/nvim/plugged
+*.config/nvim/undo
