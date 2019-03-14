@@ -7,8 +7,7 @@ alias grm='git remove-merged'
 
 # docker-compose aliases
 alias dc='docker-compose'
-alias dcdev='dc -f docker-compose.yml -f docker-compose.dev.yml'
-alias ws='dcdev exec workspace bash'
+alias ws='dc exec workspace bash'
 
 # vim-like hacks
 alias :q='exit'
