@@ -1,0 +1,70 @@
+snippet test "A PHPUnit test method"
+/** @test */
+public function ${1:testMethod}()
+{
+	${0:// 1. Arrange
+	// 2. Act
+	// 3. Assert}
+}
+endsnippet
+
+snippet setup "A PHPUnit setUp method for Laravel apps"
+/**
+ * @return void
+ */
+protected function setUp()
+{
+	parent::setUp();
+	
+	${0:// Test setups.}
+}
+endsnippet
+
+snippet largedoc
+/*
+|--------------------------------------------------------------------------
+| ${1:Large Doc Header}
+|--------------------------------------------------------------------------
+|
+| ${2:Large Doc Body}
+|
+*/
+endsnippet
+
+snippet repo
+/**
+ * @var \\${1:App}\Repositories\\${2:Model}Repository
+ */
+protected $${3:repository};
+
+/**
+ * @param  \\$1\Repositories\\$2Repository  $$3
+ * @return void
+ */
+public function __construct($2Repository $$3)
+{
+	$this->$3 = $$3;
+}
+endsnippet
+
+snippet method
+/**
+ * @return ${1:type}
+ */
+${2:protected} function ${3:method}()
+{
+	${0://}
+}
+endsnippet
+
+snippet mockgapidriver
+$this->mockGapiDriver([
+	new Response(200, [], json_encode([$0])),
+]);
+endsnippet
+
+snippet mocksapidriver
+$this->mockSapiDriver([
+	new Response(200, [], json_encode([$0])),
+]);
+endsnippet

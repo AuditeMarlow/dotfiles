@@ -1,0 +1,19 @@
+snippet spec
+import { ${1:mount} } from '@vue/test-utils'
+import expect from 'expect'
+import ${2:Component} from 'JS/components/$2'
+
+describe('$2', () => {
+	const wrapper = $1($2)
+
+	it('${3:describes an example test}', () => {
+		${4:expect(true).toBe(true)}
+	})
+})
+endsnippet
+
+snippet test
+it('${1:describes an example test}', () => {
+	${2:expect(true).toBe(true)}
+})
+endsnippet
