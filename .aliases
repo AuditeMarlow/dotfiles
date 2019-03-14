@@ -1,0 +1,18 @@
+# dots alias
+alias dots='/usr/bin/env git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+# git aliases
+alias nah='git checkout . && git clean -df'
+alias grm='git remove-merged'
+
+# docker-compose aliases
+alias dc='docker-compose'
+alias dcdev='dc -f docker-compose.yml -f docker-compose.dev.yml'
+alias ws='dcdev exec workspace bash'
+
+# vim-like hacks
+alias :q='exit'
+alias :e='vim'
+
+# other stuff
+alias path='echo -e ${PATH//:/\\n}'
