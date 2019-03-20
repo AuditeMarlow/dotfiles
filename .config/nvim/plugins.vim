@@ -1,5 +1,6 @@
 call plug#begin('~/.config/nvim/plugged')
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'chr4/nginx.vim'
     Plug 'SirVer/ultisnips'
     Plug 'adoy/vim-php-refactoring-toolbox'
     Plug 'airblade/vim-gitgutter'
