@@ -5,7 +5,6 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'adoy/vim-php-refactoring-toolbox'
     Plug 'airblade/vim-gitgutter'
     Plug 'chriskempson/base16-vim'
-    Plug 'daviesjamie/vim-base16-lightline'
     Plug 'easymotion/vim-easymotion'
     Plug 'edkolev/tmuxline.vim'
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }

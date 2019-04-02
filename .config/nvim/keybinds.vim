@@ -20,7 +20,7 @@ nnoremap <silent><c-l> :bn!<cr>
 nnoremap <leader>term :vsplit<cr>:terminal<cr>i
 
 " Press Space to turn off highlighting and clear any message already displayed.
-nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR><Paste>
+nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 " PHP specific binds
 function! PhpCsFixerFixFile()
