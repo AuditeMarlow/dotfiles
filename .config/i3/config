@@ -55,7 +55,7 @@ bindsym $mod+Shift+q kill
 
 # lock screen
 # bindsym $mod+p exec i3lock -t -i ~/walls/lock_scaled.png
-bindsym $mod+p exec xsecurelock
+# bindsym $mod+p exec xsecurelock
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec "rofi -show run"
@@ -146,6 +146,22 @@ bindsym $mod+Shift+r exec "xrdb -load ~/.Xresources && i3-msg restart"
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exit
 
+set $mode_system [l]ock, [e]xit, [s]uspend, [h]ibernate, [r]eboot, [p]oweroff
+bindsym $mod+p mode "$mode_system"
+
+mode "$mode_system" {
+    bindsym l exec --no-startup-id xsecurelock, mode "default"
+	bindsym e exec --no-startup-id logout, mode "default"
+	bindsym s exec --no-startup-id suspend, mode "default"
+	bindsym h exec --no-startup-id hibernate, mode "default"
+	bindsym r exec --no-startup-id reboot, mode "default"
+	bindsym p exec --no-startup-id poweroff, mode "default"
+
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+	bindsym $mod+p mode "default"
+}
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -232,3 +248,6 @@ client.background       $base00
 
 # Start Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# switch to workspace with urgent window automatically
+for_window [urgent=latest] focus

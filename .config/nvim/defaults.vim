@@ -8,7 +8,7 @@ set termguicolors
 set noswapfile
 set ignorecase
 set smartcase
-set smartindent
+set autoindent
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
@@ -24,6 +24,8 @@ set undofile
 set tags=tags,.tags
 set hlsearch
 set cursorline
+
+filetype plugin indent on
 
 " highlight trailing spaces
 match ErrorMsg '\s\+$'

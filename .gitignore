@@ -6,3 +6,4 @@
 *.netrwhist
 *.config/nvim/plugged
 *.config/nvim/undo
+*.code-workspace
