@@ -42,7 +42,7 @@ inherit = bar/base
 bottom = true
 
 modules-left = workspaces
-modules-center = volume battery0 battery1 backlight
+modules-center = pulseaudio battery0 battery1 backlight
 modules-right = memory cpu datetime
 
 padding-right = 1
@@ -144,14 +144,14 @@ ramp-4 = 
 ramp-5 = 
 ramp-6 = 
 
-[module/volume]
-type = internal/alsa
+[module/pulseaudio]
+type = internal/pulseaudio
 
-master-soundcard = hw:0
+;master-soundcard = hw:0
 
-master-mixer = Master
+;master-mixer = Master
 
-mapped = true
+;mapped = true
 
 format-volume = <ramp-volume> <label-volume>
 
