@@ -251,3 +251,9 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
+
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
