@@ -47,6 +47,8 @@ modules-right = memory cpu datetime
 
 padding-right = 1
 
+tray-position = right
+
 [module/workspaces]
 type = internal/i3
 pin-workspaces = true
