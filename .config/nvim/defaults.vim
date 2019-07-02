@@ -24,6 +24,8 @@ set undofile
 set tags=tags,.tags
 set hlsearch
 set cursorline
+set number
+set relativenumber
 
 filetype plugin indent on
 
