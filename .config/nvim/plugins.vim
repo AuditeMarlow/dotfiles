@@ -4,12 +4,12 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'SirVer/ultisnips'
     Plug 'adoy/vim-php-refactoring-toolbox'
     Plug 'airblade/vim-gitgutter'
-    Plug 'easymotion/vim-easymotion'
     Plug 'edkolev/tmuxline.vim'
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
     Plug 'itchyny/lightline.vim'
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
+    Plug 'justinmk/vim-sneak'
     Plug 'jwalton512/vim-blade'
     Plug 'ludovicchabant/vim-gutentags'
     Plug 'majutsushi/tagbar'
@@ -30,21 +30,6 @@ call plug#end()
 " * airblade/vim-gitgutter
 " */
 let g:gitgutter_map_keys = 0
-
-"/**
-" * easymotion/vim-easymotion
-" */
-" map  / <Plug>(easymotion-sn)
-" omap / <Plug>(easymotion-tn)
-" map  n <Plug>(easymotion-next)
-" map  N <Plug>(easymotion-prev)
-
-map <Leader>l <Plug>(easymotion-lineforward)
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
-map <Leader>h <Plug>(easymotion-linebackward)<Paste>
-
-" let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
 
 "/**
 " * edkolev/tmuxline.vim
@@ -135,6 +120,25 @@ nnoremap <a-f> :call SearchBang()<cr>
 nnoremap <c-b> :Buffers<cr>
 nnoremap <c-x>p :Files ./vendor<cr>
 nnoremap <c-x>n :Files ./node_modules<cr>
+
+"/**
+" * justinmk/vim-sneak
+" */
+let g:sneak#label = 1
+
+nmap f <Plug>Sneak_f
+nmap F <Plug>Sneak_F
+xmap f <Plug>Sneak_f
+xmap F <Plug>Sneak_F
+omap f <Plug>Sneak_f
+omap F <Plug>Sneak_F
+
+nmap t <Plug>Sneak_t
+nmap T <Plug>Sneak_T
+xmap t <Plug>Sneak_t
+xmap T <Plug>Sneak_T
+omap t <Plug>Sneak_t
+omap T <Plug>Sneak_T
 
 "/**
 " * ludovicchabant/vim-gutentags
