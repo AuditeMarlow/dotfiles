@@ -18,7 +18,7 @@ nnoremap <silent><c-l> :bn!<cr>
 
 " location list binds
 nnoremap <localleader>n :lnext<cr>
-nnoremap <localleader>p :lprev<cr>
+nnoremap <localleader>m :lprev<cr>
 
 " Open terminal & terminal applications
 nnoremap <leader>term :vsplit<cr>:terminal<cr>i
