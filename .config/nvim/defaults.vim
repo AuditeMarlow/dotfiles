@@ -26,6 +26,7 @@ set hlsearch
 set cursorline
 set number
 set relativenumber
+set updatetime=100
 
 filetype plugin indent on
 

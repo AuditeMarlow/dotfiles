@@ -41,6 +41,20 @@ let g:tmuxline_preset = 'powerline'
 let g:tmuxline_status_justify = 'left'
 
 "/**
+" * fatih/vim-go
+" */
+let g:go_auto_sameids = 1
+let g:go_auto_type_info = 1
+let g:go_fmt_command = "goimports"
+let g:go_fmt_fail_silently = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_types = 1
+let g:go_list_type = "locationlist"
+let g:go_metalinter_autosave = 1
+
+"/**
 " * itchyny/lightline.vim
 " */
 set showtabline=2
