@@ -1,9 +1,10 @@
-.php_cs.cache
-.rnd
+*.code-workspace
+*.config/nvim/plugged
+*.config/nvim/undo
+*.netrwhist
 *tags
 *tags.lock
 *tags.temp
-*.netrwhist
-*.config/nvim/plugged
-*.config/nvim/undo
-*.code-workspace
+.php_cs.cache
+.rnd
+dive.log
