@@ -162,7 +162,7 @@ let g:gutentags_ctags_tagfile = '.tags'
 "/**
 " * majutsushi/tagbar
 " */
-nmap <leader>tt :TagbarToggle<cr>
+nmap <leader>tb :TagbarToggle<cr>
 
 "/**
 " * mattn/emmet-vim
@@ -189,7 +189,7 @@ autocmd FileType vue syntax sync fromstart
 "/**
 " * rafaqz/ranger.vim
 " */
-let g:ranger_terminal = "sakura -e"
+let g:ranger_terminal = "st"
 
 map <leader>rr :RangerEdit<cr>
 map <leader>rv :RangerVSplit<cr>

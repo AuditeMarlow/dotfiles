@@ -1,6 +1,6 @@
 " Set leader keys
 let mapleader = "\\"
-let maplocalleader = ","
+let maplocalleader = "\\\\"
 
 " config binds
 nnoremap <leader>ev :Files ~/.config/nvim<cr>
@@ -27,15 +27,20 @@ nnoremap <leader>term :vsplit<cr>:terminal<cr>i
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 " PHP specific binds
-function! PhpCsFixerFixFile()
+function! PhpFixFile()
     silent !php-cs-fixer fix "%"
+    e!
+    silent !phpcbf "%"
     e!
 endfunction
 
-autocmd FileType php nmap <leader>pf :call PhpCsFixerFixFile()<cr>
+autocmd BufWritePost *.php silent! call PhpFixFile()
+" autocmd FileType php nmap <leader>pf :call PhpFixFile()<cr>
+autocmd FileType php nmap <leader>tt :PhpTest<cr>
 
 " Go specific binds
 autocmd FileType go nmap <leader>b <Plug>(go-build)
 autocmd FileType go nmap <leader>c <Plug>(go-coverage)
-autocmd FileType go nmap <leader>r <Plug>(go-run)
-autocmd FileType go nmap <leader>t <Plug>(go-test)
+autocmd FileType go nmap <leader>rn <Plug>(go-run)
+autocmd FileType go nmap <leader>re <Plug>(go-rename)
+autocmd FileType go nmap <leader>tt <Plug>(go-test)

@@ -15,7 +15,7 @@ set softtabstop=4
 set expandtab
 set foldenable
 set foldlevelstart=1
-set foldmethod=indent
+set foldmethod=syntax
 set colorcolumn=80
 set wrap
 set lazyredraw
@@ -29,6 +29,7 @@ set relativenumber
 set updatetime=100
 
 filetype plugin indent on
+syntax enable
 
 " highlight trailing spaces
 match ErrorMsg '\s\+$'
