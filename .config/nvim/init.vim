@@ -8,4 +8,4 @@ source ~/.config/nvim/defaults.vim
 source ~/.config/nvim/keybinds.vim
 
 " Load the colorscheme set by base16-manager
-source ~/.config/nvim/colorscheme.vim
+silent! source ~/.config/nvim/colorscheme.vim
