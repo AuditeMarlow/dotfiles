@@ -18,6 +18,7 @@ set foldlevelstart=1
 set foldmethod=syntax
 set colorcolumn=80
 set wrap
+set linebreak
 set lazyredraw
 set undodir=$HOME/.config/nvim/undo
 set undofile

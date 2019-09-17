@@ -26,6 +26,9 @@ nnoremap <leader>term :vsplit<cr>:terminal<cr>i
 " Press Space to turn off highlighting and clear any message already displayed.
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
+" Remove trailing whitespace
+nnoremap <silent> <leader>tws :%s/\s\+$//e<cr>
+
 " PHP specific binds
 function! PhpFixFile()
     silent !php-cs-fixer fix "%"
