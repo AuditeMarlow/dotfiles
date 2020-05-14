@@ -1,10 +1,10 @@
-let g:php_folding = 2
+let g:php_folding = 1
 
 setlocal tabstop=8
 setlocal shiftwidth=4
 setlocal softtabstop=4
 setlocal expandtab
-setlocal foldlevel=2
+setlocal foldlevel=5
 
 function! PhpTest()
     let methodName = substitute(tagbar#currenttag('%s', ''), '(.*)', '\1', '')

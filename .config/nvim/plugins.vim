@@ -1,9 +1,10 @@
 call plug#begin('~/.config/nvim/plugged')
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-    Plug 'chr4/nginx.vim'
+    " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'SirVer/ultisnips'
     Plug 'adoy/vim-php-refactoring-toolbox'
     Plug 'airblade/vim-gitgutter'
+    Plug 'chr4/nginx.vim'
+    Plug 'dhruvasagar/vim-table-mode'
     Plug 'edkolev/tmuxline.vim'
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
     Plug 'itchyny/lightline.vim'
@@ -17,6 +18,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'mgee/lightline-bufferline'
     Plug 'mike-hearn/base16-vim-lightline'
     Plug 'morhetz/gruvbox'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'neomake/neomake'
     Plug 'posva/vim-vue'
     Plug 'rafaqz/ranger.vim'
@@ -25,6 +27,8 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-surround'
 call plug#end()
+
+let g:table_mode_corner=' | '
 
 "/**
 " * airblade/vim-gitgutter
@@ -53,47 +57,6 @@ let g:go_highlight_functions = 1
 let g:go_highlight_types = 1
 let g:go_list_type = "locationlist"
 let g:go_metalinter_autosave = 1
-
-"/**
-" * itchyny/lightline.vim
-" */
-set showtabline=2
-let g:lightline = {
-\   'colorscheme': 'base16_gruvbox_dark_medium',
-\   'active': {
-\     'left': [
-\       ['mode', 'paste'],
-\       ['gitbranch', 'readonly', 'filename']
-\     ]
-\   },
-\   'tabline': {
-\     'left': [['buffers']]
-\   },
-\   'component_function': {
-\     'gitbranch': 'fugitive#head',
-\     'filename': 'LightlineFilename'
-\   },
-\   'component_expand': {
-\     'buffers': 'lightline#bufferline#buffers'
-\   },
-\   'component_type': {
-\      'buffers': 'tabsel'
-\   },
-\ }
-
-let g:lightline.separator = {
-\   'left': '', 'right': ''
-\ }
-
-let g:lightline.subseparator = {
-\   'left': '', 'right': ''
-\ }
-
-function! LightlineFilename()
-  let filename = expand('%:t') !=# '' ? expand('%:t') : '[No Name]'
-  let modified = &modified ? ' +' : ''
-  return filename . modified
-endfunction
 
 "/**
 " * junegunn/fzf.vim
@@ -179,6 +142,8 @@ let g:neomake_warning_sign = {'text': ''}
 let g:neomake_info_sign = {'text': ''}
 let g:neomake_message_sign = {'text': ''}
 
+" let g:neomake_php_enabled_makers = ['php']
+
 call neomake#configure#automake('rw')
 
 "/**
@@ -202,12 +167,12 @@ map <leader>rc :set operatorfunc=RangerChangeOperator<cr>g@
 "/**
 " * Shougo/deoplete.nvim
 " */
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_ignore_case = 1
-let g:deoplete#complete_method = "omnifunc"
-let deoplete#tag#cache_limit_size = 25000000
+" let g:deoplete#enable_at_startup = 1
+" let g:deoplete#enable_ignore_case = 1
+" let g:deoplete#complete_method = "omnifunc"
+" let deoplete#tag#cache_limit_size = 25000000
 
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+" inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 "/**
 " * SirVer/ultisnips

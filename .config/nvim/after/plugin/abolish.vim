@@ -16,4 +16,5 @@ Abolish re{sp,ps,p,s}on{se,es} re{sp}on{se}
 Abolish gro{up,pu}ed grouped
 Abolish r{ela,eal,ael,ale,lae,lea}t{ion,oin,ino,oni,nio,noi} relation
 Abolish d{ri,ir}ver{,s} d{ri}ver{}
-Abolish te{mp,pm}late template
+Abolish te{mp,pm}{la,al}te template
+Abolish p{la,al}tform platform
