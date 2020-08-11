@@ -1,5 +1,6 @@
 call plug#begin('~/.config/nvim/plugged')
     " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
     Plug 'SirVer/ultisnips'
     Plug 'adoy/vim-php-refactoring-toolbox'
     Plug 'airblade/vim-gitgutter'
@@ -57,46 +58,6 @@ let g:go_highlight_functions = 1
 let g:go_highlight_types = 1
 let g:go_list_type = "locationlist"
 let g:go_metalinter_autosave = 1
-
-"/**
-" * junegunn/fzf.vim
-" */
-" Hide statusline
-autocmd! FileType fzf
-autocmd  FileType fzf set laststatus=0 noshowmode noruler
-  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
-
-" Augment Ag command with hidden preview window that can be enabled with "?" key
-command! -bang -nargs=* Ag
-  \ call fzf#vim#ag(<q-args>,
-  \                 fzf#vim#with_preview('right:40%:hidden', '?'),
-  \                 <bang>0)
-
-" Same as above but for the Files command
-command! -bang -nargs=* Files
-  \ call fzf#vim#files(<q-args>,
-  \                 fzf#vim#with_preview('right:40%:hidden', '?'),
-  \                 <bang>0)
-
-function! Search()
-    let pattern = input('Search pattern: ')
-
-    execute 'Ag '.pattern
-endfunction
-
-function! SearchBang()
-    let pattern = input('Search pattern: ')
-
-    execute 'Ag! '.pattern
-endfunction
-
-nnoremap <c-p> :Files<cr>
-nnoremap <a-p> :Files!<cr>
-nnoremap <c-f> :call Search()<cr>
-nnoremap <a-f> :call SearchBang()<cr>
-nnoremap <c-b> :Buffers<cr>
-nnoremap <c-x>p :Files ./vendor<cr>
-nnoremap <c-x>n :Files ./node_modules<cr>
 
 "/**
 " * justinmk/vim-sneak
