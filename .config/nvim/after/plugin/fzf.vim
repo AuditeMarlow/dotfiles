@@ -14,7 +14,7 @@ command! -bang -nargs=* Ag
 
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
+  \   'rg --column --line-number --no-heading --color=always --smart-case --hidden -- '.shellescape(<q-args>), 1,
   \   fzf#vim#with_preview('right:40%:hidden', '?'), <bang>0)
 
 " Same as above but for the Files command
