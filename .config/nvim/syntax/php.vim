@@ -8,7 +8,7 @@ setlocal foldlevel=5
 
 function! PhpTest()
     let methodName = substitute(tagbar#currenttag('%s', ''), '(.*)', '\1', '')
-    execute '24sp +set\ nonumber\ norelativenumber term://phpunit '.expand('%:.').' --filter '.methodName
+    execute '24sp +set\ nonumber\ norelativenumber term://docker-compose exec workspace phpunit '.expand('%:.').' --filter '.methodName
 endfunction
 
 command! PhpTest call PhpTest()

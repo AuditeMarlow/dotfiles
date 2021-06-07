@@ -1,6 +1,6 @@
 " Set leader keys
 let mapleader = "\\"
-let maplocalleader = "\\\\"
+let maplocalleader = ","
 
 " config binds
 nnoremap <leader>ev :Files ~/.config/nvim<cr>

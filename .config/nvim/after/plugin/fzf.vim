@@ -1,6 +1,8 @@
 "/**
 " * junegunn/fzf.vim
 " */
+let g:fzf_layout = { 'down': '40%' }
+
 " Hide statusline
 autocmd! FileType fzf
 autocmd  FileType fzf set laststatus=0 noshowmode noruler

@@ -13,13 +13,14 @@ set ignorecase
 set lazyredraw
 set linebreak
 set listchars=tab:\ \ ,trail:~,space:·
+" set mouse=a
 set nobackup
 set nolist
 set noshowmode
 set noswapfile
 set nowritebackup
-set number
-set relativenumber
+" set number
+" set relativenumber
 set scrolloff=4
 set shiftwidth=4
 set shortmess+=c

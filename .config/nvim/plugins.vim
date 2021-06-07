@@ -13,14 +13,14 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'junegunn/fzf.vim'
     Plug 'justinmk/vim-sneak'
     Plug 'jwalton512/vim-blade'
-    " Plug 'ludovicchabant/vim-gutentags'
+    Plug 'ludovicchabant/vim-gutentags'
     Plug 'majutsushi/tagbar'
     Plug 'mattn/emmet-vim'
     Plug 'mgee/lightline-bufferline'
     Plug 'mike-hearn/base16-vim-lightline'
     Plug 'morhetz/gruvbox'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'neomake/neomake'
+    " Plug 'neomake/neomake'
     Plug 'posva/vim-vue'
     Plug 'rafaqz/ranger.vim'
     Plug 'tpope/vim-abolish'
@@ -95,20 +95,6 @@ nmap <leader>tb :TagbarToggle<cr>
 " * mattn/emmet-vim
 " */
 let g:user_emmet_leader_key='<C-e>'
-
-"/**
-" * neomake/neomake
-" */
-let g:neomake_open_list = 2
-
-let g:neomake_error_sign = {'text': ''}
-let g:neomake_warning_sign = {'text': ''}
-let g:neomake_info_sign = {'text': ''}
-let g:neomake_message_sign = {'text': ''}
-
-" let g:neomake_php_enabled_makers = ['php']
-
-call neomake#configure#automake('rw')
 
 "/**
 " * posva/vim-vue
