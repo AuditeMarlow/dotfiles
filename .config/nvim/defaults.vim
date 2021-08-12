@@ -2,6 +2,7 @@ set autoindent
 set cmdheight=2
 set colorcolumn=80
 set cursorline
+set cursorcolumn
 set equalalways
 set expandtab
 set foldenable

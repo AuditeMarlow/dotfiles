@@ -29,7 +29,7 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.fzf.colors ] && source ~/.fzf.colors
 
-export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
 export FZF_CTR_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 [ -f /usr/share/nvm/init-nvm.sh ] && source /usr/share/nvm/init-nvm.sh
