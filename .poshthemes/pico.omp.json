@@ -1,0 +1,94 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "os",
+          "style": "diamond",
+          "foreground": "white",
+          "background": "darkGray",
+          "leading_diamond": "\uE0B6",
+          "trailing_diamond": "\uE0B4",
+          "properties": {
+            "postfix": "",
+            "prefix": "",
+            "wsl": "",
+            "wsl_separator": ""
+          }
+        },
+        {
+          "type": "path",
+          "style": "plain",
+          "foreground": "green",
+          "properties": {
+            "postfix": "",
+            "style": "folder"
+          }
+        },
+        {
+          "type": "git",
+          "style": "plain",
+          "foreground": "magenta",
+          "properties": {
+            "branch_icon": "",
+            "postfix": ""
+          }
+        },
+        {
+          "type": "executiontime",
+          "style": "plain",
+          "foreground": "yellow",
+          "properties": {
+            "threshold": 500,
+            "style": "austin"
+          }
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "right",
+      "segments": [
+        {
+          "type": "exit",
+          "style": "plain",
+          "properties": {
+            "prefix": "",
+            "always_numeric": true,
+            "error_color": "red"
+          }
+        },
+        {
+          "type": "time",
+          "style": "plain",
+          "foreground": "darkGray",
+          "properties": {
+            "prefix": "",
+            "postfix": ""
+          }
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "default",
+          "properties": {
+            "postfix": "",
+            "prefix": "",
+            "text": "{{if not .Root}}${{end}}{{if .Root}}<red>#</>{{end}}"
+          }
+        }
+      ]
+    }
+  ],
+  "final_space": true
+}

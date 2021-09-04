@@ -1,0 +1,88 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "os",
+          "style": "diamond",
+          "foreground": "default",
+          "background": "darkGray",
+          "leading_diamond": "\uE0B6",
+          "trailing_diamond": "\uE0B4",
+          "properties": {
+            "prefix": "",
+            "postfix": "",
+            "wsl": "",
+            "wsl_separator": ""
+          }
+        },
+        {
+          "type": "session",
+          "style": "plain",
+          "properties": {
+            "user_info_separator": " <default>at</> ",
+            "user_color": "magenta",
+            "host_color": "yellow"
+          }
+        },
+        {
+          "type": "path",
+          "style": "plain",
+          "foreground": "green",
+          "properties": {
+            "prefix": "<default>in </>",
+            "style": "full"
+          }
+        },
+        {
+          "type": "git",
+          "style": "plain",
+          "foreground": "magenta",
+          "properties": {
+            "prefix": "<default>on</> ",
+            "branch_icon": "",
+            "postfix": ""
+          }
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "right",
+      "segments": [
+        {
+          "type": "exit",
+          "style": "plain",
+          "foreground": "red",
+          "properties": {
+            "always_numeric": true
+          }
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "default",
+          "properties": {
+            "display_exit_code": true,
+            "always_enabled": true,
+            "error_color": "red",
+            "prefix": "",
+            "text": "{{if .Root}}#{{end}}{{if not .Root}}${{end}}",
+            "postfix": " "
+          }
+        }
+      ]
+    }
+  ],
+  "final_space": false
+}
