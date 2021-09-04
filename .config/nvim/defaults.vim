@@ -6,7 +6,7 @@ set cursorcolumn
 set equalalways
 set expandtab
 set foldenable
-set foldlevelstart=1
+set foldlevelstart=99
 set foldmethod=syntax
 set hidden
 set hlsearch
