@@ -13,8 +13,8 @@
           "leading_diamond": "\uE0B6",
           "trailing_diamond": "\uE0B4",
           "properties": {
-            "postfix": "",
             "prefix": "",
+            "postfix": "",
             "wsl": "",
             "wsl_separator": ""
           }
@@ -24,7 +24,6 @@
           "style": "plain",
           "foreground": "green",
           "properties": {
-            "postfix": "",
             "style": "folder"
           }
         },
@@ -34,16 +33,17 @@
           "foreground": "magenta",
           "properties": {
             "branch_icon": "",
-            "postfix": ""
+            "prefix": ""
           }
         },
         {
           "type": "executiontime",
           "style": "plain",
-          "foreground": "yellow",
+          "foreground": "darkGray",
           "properties": {
             "threshold": 500,
-            "style": "austin"
+            "style": "austin",
+            "prefix": ""
           }
         }
       ]
