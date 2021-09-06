@@ -7,14 +7,9 @@
       "segments": [
         {
           "type": "os",
-          "style": "diamond",
-          "foreground": "default",
-          "background": "darkGray",
-          "leading_diamond": "\uE0B6",
-          "trailing_diamond": "\uE0B4",
+          "style": "plain",
           "properties": {
             "prefix": "",
-            "postfix": "",
             "wsl": "",
             "wsl_separator": ""
           }
@@ -25,7 +20,8 @@
           "properties": {
             "user_info_separator": " <default>at</> ",
             "user_color": "magenta",
-            "host_color": "yellow"
+            "host_color": "yellow",
+            "prefix": ""
           }
         },
         {
@@ -45,6 +41,16 @@
             "prefix": "<default>on</> ",
             "branch_icon": "",
             "postfix": ""
+          }
+        },
+        {
+          "type": "command",
+          "style": "plain",
+          "foreground": "magenta",
+          "properties": {
+            "shell": "sh",
+            "command": "bash -c '[[ -z $(git status -s 2> /dev/null) ]] || echo \"!\"'",
+            "prefix": ""
           }
         }
       ]
