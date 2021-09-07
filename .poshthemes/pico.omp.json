@@ -29,6 +29,7 @@
           "foreground": "magenta",
           "properties": {
             "branch_icon": "",
+            "tag_icon": "",
             "prefix": ""
           }
         },
