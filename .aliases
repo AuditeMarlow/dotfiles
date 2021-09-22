@@ -3,7 +3,7 @@ alias dots='/usr/bin/env git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # git aliases
 alias nah='git checkout . && git clean -df'
-alias grm='git remove-merged'
+alias grm='git branch -d $(git branch --merged | fzf --multi --reverse)'
 
 # docker-compose aliases
 alias dc='docker-compose'
