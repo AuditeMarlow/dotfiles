@@ -1,2 +1,10 @@
-README.md
-setup.sh
+*.code-workspace
+*.config/nvim/plugged
+*.config/nvim/undo
+*.netrwhist
+*tags
+*tags.lock
+*tags.temp
+.php_cs.cache
+.rnd
+dive.log
