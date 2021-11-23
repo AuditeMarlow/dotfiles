@@ -3,7 +3,7 @@
 " */
 set showtabline=2
 let g:lightline = {
-\   'colorscheme': 'base16_gruvbox_dark_medium',
+\   'colorscheme': 'base16_gruvbox_dark_hard',
 \   'active': {
 \     'left': [
 \       ['mode', 'paste'],
