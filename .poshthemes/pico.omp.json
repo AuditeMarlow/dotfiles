@@ -39,7 +39,7 @@
           "foreground": "yellow",
           "properties": {
             "shell": "sh",
-            "command": "bash -c '[[ -z $(git status -s 2> /dev/null) ]] || echo \"\u6c59\"'",
+            "command": "bash -c 'if [[ -n $(git status -s 2> /dev/null) ]]; then echo \"\u6c59\"; fi'",
             "prefix": ""
           }
         },
@@ -97,5 +97,10 @@
       ]
     }
   ],
-  "final_space": true
+  "final_space": true,
+  "transient_prompt": {
+    "background": "transparent",
+    "foreground": "grey",
+    "template": "{{if not .Root}}${{end}}{{if .Root}}<red>#</>{{end}} "
+  }
 }
