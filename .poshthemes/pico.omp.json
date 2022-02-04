@@ -9,7 +9,7 @@
           "type": "os",
           "style": "plain",
           "properties": {
-            "prefix": "",
+            "prefix": "\n",
             "wsl": "",
             "wsl_separator": ""
           }
@@ -101,6 +101,6 @@
   "transient_prompt": {
     "background": "transparent",
     "foreground": "grey",
-    "template": "{{if not .Root}}${{end}}{{if .Root}}<red>#</>{{end}} "
+    "template": "\n{{if not .Root}}${{end}}{{if .Root}}<red>#</>{{end}} "
   }
 }
