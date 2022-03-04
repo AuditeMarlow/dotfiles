@@ -44,8 +44,9 @@ let g:gitgutter_map_keys = 0
 nmap <leader>tr \init:Tmuxline<cr>
 
 let g:tmuxline_theme = 'lightline'
-let g:tmuxline_preset = 'powerline'
+let g:tmuxline_preset = 'minimal'
 let g:tmuxline_status_justify = 'left'
+let g:tmuxline_powerline_separators = 0
 
 "/**
 " * justinmk/vim-sneak

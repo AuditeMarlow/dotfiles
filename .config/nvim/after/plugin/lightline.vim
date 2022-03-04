@@ -26,14 +26,6 @@ let g:lightline = {
 \   },
 \ }
 
-let g:lightline.separator = {
-\   'left': '', 'right': ''
-\ }
-
-let g:lightline.subseparator = {
-\   'left': '', 'right': ''
-\ }
-
 function! LightlineFilename()
   let filename = expand('%:t') !=# '' ? expand('%:t') : '[No Name]'
   let modified = &modified ? ' +' : ''
