@@ -1,5 +1,4 @@
 call plug#begin('~/.config/nvim/plugged')
-    " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
     Plug 'SirVer/ultisnips'
     Plug 'adoy/vim-php-refactoring-toolbox'
@@ -8,6 +7,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'dhruvasagar/vim-table-mode'
     Plug 'edkolev/tmuxline.vim'
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+    Plug 'hashivim/vim-vagrant'
     Plug 'itchyny/lightline.vim'
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
@@ -22,7 +22,6 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'mike-hearn/base16-vim-lightline'
     Plug 'morhetz/gruvbox'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    " Plug 'neomake/neomake'
     Plug 'posva/vim-vue'
     Plug 'rafaqz/ranger.vim'
     Plug 'rust-lang/rust.vim'

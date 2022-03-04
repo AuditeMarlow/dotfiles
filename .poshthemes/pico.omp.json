@@ -6,15 +6,6 @@
       "alignment": "left",
       "segments": [
         {
-          "type": "os",
-          "style": "plain",
-          "properties": {
-            "prefix": "\n",
-            "wsl": "",
-            "wsl_separator": ""
-          }
-        },
-        {
           "type": "path",
           "style": "plain",
           "foreground": "green",
