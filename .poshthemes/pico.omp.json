@@ -11,7 +11,7 @@
           "foreground": "green",
           "properties": {
             "style": "folder",
-            "prefix": ""
+            "prefix": "\n"
           }
         },
         {
