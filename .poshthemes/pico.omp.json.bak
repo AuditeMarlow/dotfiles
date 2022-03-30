@@ -7,40 +7,40 @@
         {
           "foreground": "green",
           "properties": {
-            "style": "folder"
+            "style": "folder",
+            "template": "\n{{ .Path }} "
           },
           "style": "plain",
-          "template": "\n{{ .Path }} ",
           "type": "path"
         },
         {
           "foreground": "magenta",
           "properties": {
             "branch_icon": "",
-            "tag_icon": ""
+            "tag_icon": "",
+            "template": "{{ .HEAD }} {{ .BranchStatus }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0}} \uf692 {{ .StashCount }}{{ end }}{{ if gt .WorktreeCount 0}} \uf1bb {{ .WorktreeCount }}{{ end }} "
           },
           "style": "plain",
-          "template": "{{ .HEAD }} {{ .BranchStatus }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0}} \uf692 {{ .StashCount }}{{ end }}{{ if gt .WorktreeCount 0}} \uf1bb {{ .WorktreeCount }}{{ end }} ",
           "type": "git"
         },
         {
           "foreground": "yellow",
           "properties": {
             "command": "bash -c 'if [[ -n $(git status -s 2> /dev/null) ]]; then echo \"\u6c59\"; fi'",
-            "shell": "sh"
+            "shell": "sh",
+            "template": "{{ .Output }} "
           },
           "style": "plain",
-          "template": "{{ .Output }} ",
           "type": "command"
         },
         {
           "foreground": "darkGray",
           "properties": {
             "style": "austin",
+            "template": "{{ .FormattedMs }} ",
             "threshold": 500
           },
           "style": "plain",
-          "template": "{{ .FormattedMs }} ",
           "type": "executiontime"
         }
       ],
@@ -53,14 +53,18 @@
           "foreground_templates": [
             "{{ if gt .Code 0 }}red{{ end }}"
           ],
+          "properties": {
+            "template": "{{ if gt .Code 0 }}\uf00d {{ .Code }}{{ else }}\uf42e{{ end }} "
+          },
           "style": "plain",
-          "template": "{{ if gt .Code 0 }}\uf00d {{ .Code }}{{ else }}\uf42e{{ end }} ",
           "type": "exit"
         },
         {
           "foreground": "darkGray",
+          "properties": {
+            "template": "{{ .CurrentDate | date .Format }}"
+          },
           "style": "plain",
-          "template": "{{ .CurrentDate | date .Format }}",
           "type": "time"
         }
       ],
@@ -72,8 +76,10 @@
       "segments": [
         {
           "foreground": "default",
+          "properties": {
+            "template": "{{if not .Root}}${{end}}{{if .Root}}<red>#</>{{end}}"
+          },
           "style": "plain",
-          "template": "{{if not .Root}}${{end}}{{if .Root}}<red>#</>{{end}}",
           "type": "text"
         }
       ],
@@ -86,5 +92,5 @@
     "foreground": "grey",
     "template": "\n{{if not .Root}}${{end}}{{if .Root}}<red>#</>{{end}} "
   },
-  "version": 2
+  "version": 1
 }

@@ -6,7 +6,7 @@ if which kubectl &> /dev/null; then
 fi
 
 if which oh-my-posh &> /dev/null && [ -d ~/.poshthemes ]; then
-    eval "$(oh-my-posh --init --shell zsh --config ~/.poshthemes/pico.omp.json)"
+    eval "$(oh-my-posh init zsh --config ~/.poshthemes/pico.omp.json)"
 fi
 
 if [ -f /usr/share/zsh/share/antigen.zsh ]; then
@@ -49,3 +49,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 enable_poshtransientprompt
+
+# if tmux is executable and not inside a tmux session, then try to attach.
+# if attachment fails, start a new session
+[ -x "$(command -v tmux)" ] \
+  && [ -z "${TMUX}" ] \
+  && { tmux attach || tmux; } >/dev/null 2>&1
