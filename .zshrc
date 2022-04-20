@@ -6,7 +6,7 @@ if which kubectl &> /dev/null; then
 fi
 
 if which oh-my-posh &> /dev/null && [ -d ~/.poshthemes ]; then
-    eval "$(oh-my-posh --init --shell zsh --config ~/.poshthemes/pico.omp.json)"
+    eval "$(oh-my-posh init zsh --config ~/.poshthemes/pico.omp.json)"
 fi
 
 if [ -f /usr/share/zsh/share/antigen.zsh ]; then
