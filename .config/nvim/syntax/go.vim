@@ -9,6 +9,12 @@ command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
 command! -bang AS call go#alternate#Switch(<bang>0, 'split')
 command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 
+autocmd FileType go nmap <leader>b <Plug>(go-build)
+autocmd FileType go nmap <leader>c <Plug>(go-coverage)
+autocmd FileType go nmap <leader>rn <Plug>(go-run)
+autocmd FileType go nmap <leader>re <Plug>(go-rename)
+autocmd FileType go nmap <leader>tt <Plug>(go-test)
+
 "/**
 " * fatih/vim-go
 " */
