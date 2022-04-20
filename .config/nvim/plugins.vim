@@ -29,6 +29,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-surround'
+    Plug 'vim-test/vim-test'
 call plug#end()
 
 let g:table_mode_corner=' | '

@@ -29,6 +29,11 @@ nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 " Remove trailing whitespace
 nnoremap <silent> <leader>tws :%s/\s\+$//e<cr>
 
+" Stop terminal modes from being a pain in the ass
+if has('nvim')
+  tmap <C-o> <C-\><C-n>
+endif
+
 " PHP specific binds
 function! PhpFixFile()
     silent !php-cs-fixer fix "%"
@@ -39,7 +44,7 @@ endfunction
 
 autocmd BufWritePost *.php silent! call PhpFixFile()
 " autocmd FileType php nmap <leader>pf :call PhpFixFile()<cr>
-autocmd FileType php nmap <leader>tt :PhpTest<cr>
+" autocmd FileType php nmap <leader>tt :PhpTest<cr>
 
 " Go specific binds
 autocmd FileType go nmap <leader>b <Plug>(go-build)
