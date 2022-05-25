@@ -13,5 +13,5 @@ function! PhpFixFile()
   e!
 endfunction
 
-autocmd BufWritePost *.php silent! call PhpFixFile()
+" autocmd BufWritePost *.php silent! call PhpFixFile()
 " autocmd FileType php nmap <leader>pf :call PhpFixFile()<cr>

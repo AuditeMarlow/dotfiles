@@ -16,7 +16,7 @@ let g:lightline = {
 \   'component_function': {
 \     'cocstatus': 'coc#status',
 \     'filename': 'LightlineFilename',
-\     'gitbranch': 'fugitive#head'
+\     'gitbranch': 'FugitiveHead'
 \   },
 \   'component_expand': {
 \     'buffers': 'lightline#bufferline#buffers'
