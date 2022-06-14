@@ -30,12 +30,14 @@ set smartcase
 set softtabstop=4
 set splitbelow
 set splitright
+set path+=**
 set tabstop=8
 set tags=tags,.tags
 set termguicolors
 set undodir=$HOME/.config/nvim/undo
 set undofile
 set updatetime=100
+set wildmenu
 set wrap
 
 " Automatically resize vim splits when window is resized
