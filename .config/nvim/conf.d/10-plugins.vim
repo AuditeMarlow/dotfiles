@@ -17,7 +17,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'mattn/webapi-vim'
   Plug 'morhetz/gruvbox'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'posva/vim-vue'
+  Plug 'storyn26383/vim-vue'
   Plug 'rafaqz/ranger.vim'
   Plug 'rust-lang/rust.vim'
   Plug 'tpope/vim-abolish'
