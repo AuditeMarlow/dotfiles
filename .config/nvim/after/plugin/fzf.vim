@@ -39,11 +39,7 @@ function! SearchBang()
 endfunction
 
 nnoremap <c-p> :Files<cr>
-nnoremap <a-p> :Files!<cr>
 nnoremap <c-f> :call Search()<cr>
-nnoremap <a-f> :call SearchBang()<cr>
-" nnoremap <c-f> :Rg<cr>
-" nnoremap <a-f> :Rg!<cr>
-nnoremap <c-b> :Buffers<cr>
-nnoremap <c-x>p :Files ./vendor<cr>
-nnoremap <c-x>n :Files ./node_modules<cr>
+" nnoremap <c-b> :Buffers<cr>
+" nnoremap <c-x>p :Files ./vendor<cr>
+" nnoremap <c-x>n :Files ./node_modules<cr>
