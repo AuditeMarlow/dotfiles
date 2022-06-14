@@ -51,13 +51,3 @@ match ErrorMsg '\s\+$'
 
 " auto remove trailing spaces on save
 autocmd FileType php,blade,javascript,vue,css autocmd BufWritePre <buffer> %s/\s\+$//e
-
-
-
-
-
-
-
-abbr yldlrll # yamllint disable-line rule:line-length
-abbr yldrll # yamllint disable rule:line-length
-abbr ylerll # yamllint enable rule:line-length
