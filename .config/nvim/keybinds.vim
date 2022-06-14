@@ -13,8 +13,6 @@ nnoremap <leader>clean :PlugClean<cr>
 
 " buffer binds
 nnoremap <silent><leader>bd :bufdo bd!<cr>
-nnoremap <silent><c-h> :bp!<cr>
-nnoremap <silent><c-l> :bn!<cr>
 
 " location list binds
 nnoremap <localleader>n :lnext<cr>
