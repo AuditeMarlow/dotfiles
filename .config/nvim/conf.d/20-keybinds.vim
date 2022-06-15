@@ -27,6 +27,9 @@ nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 " Remove trailing whitespace
 nnoremap <silent> <leader>tws :%s/\s\+$//e<cr>
 
+" tagbar binds
+nmap <leader>tb :TagbarToggle<cr>
+
 " Stop terminal modes from being a pain in the ass
 if has('nvim')
   tmap <C-o> <C-\><C-n>

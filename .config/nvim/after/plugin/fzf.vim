@@ -40,6 +40,6 @@ endfunction
 
 nnoremap <c-p> :Files<cr>
 nnoremap <c-f> :call Search()<cr>
-" nnoremap <c-b> :Buffers<cr>
+nnoremap <leader>bb :Buffers<cr>
 " nnoremap <c-x>p :Files ./vendor<cr>
 " nnoremap <c-x>n :Files ./node_modules<cr>
