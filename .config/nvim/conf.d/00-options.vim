@@ -6,8 +6,6 @@
 " or <CR>, the indent is deleted again.
 set autoindent
 
-" set cmdheight=2
-
 " 'colorcolumn' 'cc'
 "
 " 'colorcolumn' is a comma separated list of screen columns that are
@@ -53,7 +51,6 @@ set hidden
 "
 " When there is a previous search pattern, highlight all its matches.
 set hlsearch
-
 
 " 'ignorecase' 'ic' 'noignorecase' 'noic'
 "
