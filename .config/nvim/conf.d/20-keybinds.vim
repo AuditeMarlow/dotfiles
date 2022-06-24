@@ -1,6 +1,5 @@
 " Set leader keys
 let mapleader = "\\"
-let maplocalleader = ","
 
 " config binds
 nnoremap <leader>ev :Files ~/.config/nvim<cr>
@@ -15,8 +14,8 @@ nnoremap <leader>clean :PlugClean<cr>
 nnoremap <silent><leader>bd :bufdo bd!<cr>
 
 " location list binds
-nnoremap <localleader>n :lnext<cr>
-nnoremap <localleader>m :lprev<cr>
+nnoremap <leader>ln :lnext<cr>
+nnoremap <leader>lm :lprev<cr>
 
 " Open terminal & terminal applications
 nnoremap <leader>term :vsplit<cr>:terminal<cr>i

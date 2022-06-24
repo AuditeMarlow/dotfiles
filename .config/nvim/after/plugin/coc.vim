@@ -84,18 +84,18 @@ autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
 
 " Mappings for CoCList
 " Show all diagnostics.
-nnoremap <silent><nowait> <localleader>a  :<C-u>CocList diagnostics<cr>
+nnoremap <silent><nowait> <leader>coca  :<C-u>CocList diagnostics<cr>
 " Manage extensions.
-nnoremap <silent><nowait> <localleader>e  :<C-u>CocList extensions<cr>
+nnoremap <silent><nowait> <leader>coce  :<C-u>CocList extensions<cr>
 " Show commands.
-nnoremap <silent><nowait> <localleader>c  :<C-u>CocList commands<cr>
+nnoremap <silent><nowait> <leader>cocc  :<C-u>CocList commands<cr>
 " Find symbol of current document.
-nnoremap <silent><nowait> <localleader>o  :<C-u>CocList outline<cr>
+nnoremap <silent><nowait> <leader>coco  :<C-u>CocList outline<cr>
 " Search workspace symbols.
-nnoremap <silent><nowait> <localleader>s  :<C-u>CocList -I symbols<cr>
+nnoremap <silent><nowait> <leader>cocs  :<C-u>CocList -I symbols<cr>
 " Do default action for next item.
-nnoremap <silent><nowait> <localleader>j  :<C-u>CocNext<CR>
+nnoremap <silent><nowait> <leader>cocn  :<C-u>CocNext<CR>
 " Do default action for previous item.
-nnoremap <silent><nowait> <localleader>k  :<C-u>CocPrev<CR>
+nnoremap <silent><nowait> <leader>cocp  :<C-u>CocPrev<CR>
 " Resume latest coc list.
-nnoremap <silent><nowait> <localleader>p  :<C-u>CocListResume<CR>
+nnoremap <silent><nowait> <leader>cocp  :<C-u>CocListResume<CR>
