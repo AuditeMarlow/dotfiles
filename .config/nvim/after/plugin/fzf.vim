@@ -1,6 +1,3 @@
-"/**
-" * junegunn/fzf.vim
-" */
 let g:fzf_layout = { 'down': '40%' }
 
 " Hide statusline

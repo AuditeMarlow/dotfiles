@@ -1,5 +1,3 @@
-let g:sneak#label = 1
-
 nmap f <Plug>Sneak_f
 nmap F <Plug>Sneak_F
 xmap f <Plug>Sneak_f

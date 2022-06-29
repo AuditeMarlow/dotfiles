@@ -28,8 +28,3 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'tpope/vim-surround'
   Plug 'vim-test/vim-test'
 call plug#end()
-
-" Load plugin configurations
-for f in glob('~/.config/nvim/conf.d/plugins/*.vim', 0, 1)
-  execute 'source' f
-endfor

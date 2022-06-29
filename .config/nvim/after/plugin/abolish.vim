@@ -1,5 +1,5 @@
 if !exists(":Abolish")
-    finish
+  finish
 endif
 
 Abolish req{eu,ue}st{,ed,ing} req{ue}st{}
