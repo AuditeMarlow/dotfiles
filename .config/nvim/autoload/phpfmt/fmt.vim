@@ -15,10 +15,23 @@ if !exists('g:phpfmt_formatter_cmds')
   let g:phpfmt_formatter_cmds = {}
 endif
 
-let s:phpfmt_default_formatter_cmds = {
-  \   'php-cs-fixer': 'php-cs-fixer fix',
-  \   'phpcbf':       'phpcbf',
-  \ }
+function! s:on_stdout(job_id, data, event) abort
+  if g:phpfmt_debug
+    echo a:data
+  endif
+  try | silent undojoin | catch | endtry
+endfunction
+
+function! s:on_stderr(job_id, data, event) abort
+  let l:line = join(a:data, ' ')
+  if g:phpfmt_debug && l:line != ''
+    echoerr l:line
+  endif
+endfunction
+
+function! s:on_exit(job_id, data, event) abort
+  silent edit! | execute 'normal! g`"'
+endfunction
 
 function! phpfmt#fmt#autoformat() abort
   if get(g:, 'phpfmt_autosave', 1)
@@ -26,36 +39,30 @@ function! phpfmt#fmt#autoformat() abort
   endif
 endfunction
 
+let s:phpfmt_default_formatter_cmds = {
+      \ 'php-cs-fixer': 'php-cs-fixer fix',
+      \ 'phpcbf': 'phpcbf',
+      \ }
+
+let s:phpfmt_job_opts = {
+      \ 'on_stdout': function('s:on_stdout'),
+      \ 'on_stderr': function('s:on_stderr'),
+      \ 'on_exit': function('s:on_exit'),
+      \ }
+
 function! phpfmt#fmt#format() abort
-  " save cursor position and many other things
-  let l:curw = winsaveview()
+  let l:cmds = []
 
   for l:fmt in g:phpfmt_formatters
-    let l:cmd = phpfmt#fmt#cmd(l:fmt).' '.expand('%')
-
-    if g:phpfmt_debug
-      echo l:cmd
-    endif
-
-    let l:cmd_out = system(l:cmd)
-
-    if v:shell_error
-      echoerr v:shell_error.': '.l:cmd_out
-    else
-      " remove undo point caused via BufWritePost
-      try | silent undojoin | catch | endtry
-    endif
-
-    if g:phpfmt_debug && !v:shell_error
-      echo l:cmd_out
-    endif
+    call add(l:cmds, phpfmt#fmt#cmd(l:fmt).' '.expand('%'))
   endfor
 
-  " reload the buffer
-  silent edit!
+  let l:cmd = ['bash', '-c', join(l:cmds, ' && ')]
+  if g:phpfmt_debug
+    echo l:cmd
+  endif
 
-  " restore our cursor/windows positions
-  call winrestview(l:curw)
+  call jobstart(l:cmd, s:phpfmt_job_opts)
 endfunction
 
 function! phpfmt#fmt#cmd(fmt) abort

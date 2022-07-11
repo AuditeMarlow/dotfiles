@@ -3,9 +3,11 @@ if exists('g:loaded_phpfmt') || &compatible
 endif
 let g:loaded_phpfmt = 1
 
-command! -bar PhpFmt call phpfmt#fmt#format()
+command! -bar PhpFmt
+      \ call phpfmt#fmt#format()
 
 augroup vim-phpfmt
   autocmd!
-  autocmd BufWritePost *.php call phpfmt#fmt#autoformat()
+  autocmd BufWritePost *.php
+        \ call phpfmt#fmt#autoformat()
 augroup END
