@@ -20,8 +20,8 @@ git init --bare "$HOME/.dotfiles"
 alias dots='/usr/bin/env git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 dots config status.showUntrackedFiles no
 dots remote add origin git@github.com:AuditeMarlow/dotfiles.git
-dots pull origin master
-dots branch --set-upstream-to origin/master master
+dots pull origin main
+dots branch --set-upstream-to origin/main main
 rm "$HOME/README.md" "$HOME/setup.sh" &> /dev/null || true
 
 echo -e "\\033[0;32mSuccessfully set up dotfiles\\033[0m"
