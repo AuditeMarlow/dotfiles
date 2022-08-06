@@ -1,5 +1,8 @@
-export PATH=$PATH:~/.cargo/bin
 export GPG_TTY=$(tty)
+
+if [ -d $HOME/.cargo/bin ]; then
+    export PATH=$PATH:~/.cargo/bin
+fi
 
 if which kubectl &> /dev/null; then
     source <(kubectl completion zsh)
