@@ -12,8 +12,8 @@ if which oh-my-posh &> /dev/null && [ -d ~/.poshthemes ]; then
     eval "$(oh-my-posh init zsh --config ~/.poshthemes/pico.omp.json)"
 fi
 
-if [ -f /usr/share/zsh/share/antigen.zsh ]; then
-    source /usr/share/zsh/share/antigen.zsh
+if [ -f /usr/local/share/zsh/antigen.zsh ]; then
+    source /usr/local/share/zsh/antigen.zsh
 
     antigen use oh-my-zsh
 
