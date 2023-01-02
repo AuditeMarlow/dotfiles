@@ -54,7 +54,7 @@
             "{{ if gt .Code 0 }}red{{ end }}"
           ],
           "style": "plain",
-          "template": "{{ if gt .Code 0 }}\uf00d {{ .Code }}{{ else }}\uf42e{{ end }} ",
+          "template": "{{ if gt .Code 0 }}{{ .Code }}{{ end }} ",
           "type": "exit"
         },
         {
