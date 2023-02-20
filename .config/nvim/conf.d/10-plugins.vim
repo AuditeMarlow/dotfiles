@@ -22,9 +22,11 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'rafaqz/ranger.vim'
   Plug 'rust-lang/rust.vim'
   Plug 'storyn26383/vim-vue'
+  Plug 'towolf/vim-helm'
   Plug 'tpope/vim-abolish'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-surround'
   Plug 'vim-test/vim-test'
 call plug#end()

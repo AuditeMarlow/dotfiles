@@ -165,6 +165,13 @@ set undodir=$HOME/.config/nvim/undo
 " read.
 set undofile
 
+" 'updatetime' 'ut'
+"
+"	If this many milliseconds nothing is typed the swap file will be written to
+"	disk (see |crash-recovery|). Also used for the |CursorHold| autocommand
+"	event.
+set updatetime=300
+
 " 'wildmenu' 'wmnu' 'nowildmenu' 'nowmnu'
 "
 " When 'wildmenu' is on, command-line completion operates in an enhanced mode.
