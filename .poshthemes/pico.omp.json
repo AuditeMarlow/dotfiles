@@ -83,7 +83,7 @@
   "final_space": true,
   "transient_prompt": {
     "background": "transparent",
-    "foreground": "grey",
+    "foreground": "foreground",
     "template": "\n{{if not .Root}}${{end}}{{if .Root}}<red>#</>{{end}} "
   },
   "version": 2
