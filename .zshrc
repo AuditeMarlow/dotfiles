@@ -8,10 +8,6 @@ if which kubectl &> /dev/null; then
     source <(kubectl completion zsh)
 fi
 
-if which oh-my-posh &> /dev/null && [ -d ~/.poshthemes ]; then
-    eval "$(oh-my-posh init zsh --config ~/.poshthemes/pico.omp.json)"
-fi
-
 if [ -f /usr/local/share/zsh/antigen.zsh ]; then
     source /usr/local/share/zsh/antigen.zsh
 
@@ -30,6 +26,12 @@ if [ -f /usr/local/share/zsh/antigen.zsh ]; then
     # antigen theme suvash
 
     antigen apply
+
+    unalias g
+fi
+
+if which oh-my-posh &> /dev/null && [ -d ~/.poshthemes ]; then
+    eval "$(oh-my-posh init zsh --config ~/.poshthemes/pico.omp.json)"
 fi
 
 # Base16 Shell
@@ -58,3 +60,5 @@ enable_poshtransientprompt
 [ -x "$(command -v tmux)" ] \
   && [ -z "${TMUX}" ] \
   && { tmux attach || tmux; } >/dev/null 2>&1
+
+export GOPATH="$HOME/go"; export GOROOT="$HOME/.go"; export PATH="$GOPATH/bin:$PATH"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
