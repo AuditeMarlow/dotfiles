@@ -23,16 +23,16 @@ if [ -f /usr/local/share/zsh/antigen.zsh ]; then
     antigen bundle zsh-users/zsh-autosuggestions
     antigen bundle zsh-users/zsh-syntax-highlighting
 
-    # antigen theme suvash
+    antigen theme refined
 
     antigen apply
 
     unalias g
 fi
 
-if which oh-my-posh &> /dev/null && [ -d ~/.poshthemes ]; then
-    eval "$(oh-my-posh init zsh --config ~/.poshthemes/pico.omp.json)"
-fi
+# if which oh-my-posh &> /dev/null && [ -d ~/.poshthemes ]; then
+#     eval "$(oh-my-posh init zsh --config ~/.poshthemes/pico.omp.json)"
+# fi
 
 # Base16 Shell
 BASE16_SHELL_PATH="$HOME/.config/base16-shell"
@@ -53,7 +53,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-enable_poshtransientprompt
+# enable_poshtransientprompt
 
 # if tmux is executable and not inside a tmux session, then try to attach.
 # if attachment fails, start a new session
