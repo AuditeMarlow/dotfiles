@@ -4,10 +4,6 @@ if [ -d $HOME/.cargo/bin ]; then
     export PATH=$PATH:~/.cargo/bin
 fi
 
-if which kubectl &> /dev/null; then
-    source <(kubectl completion zsh)
-fi
-
 if [ -f /usr/local/share/zsh/antigen.zsh ]; then
     source /usr/local/share/zsh/antigen.zsh
 
@@ -30,10 +26,6 @@ if [ -f /usr/local/share/zsh/antigen.zsh ]; then
     unalias g
 fi
 
-# if which oh-my-posh &> /dev/null && [ -d ~/.poshthemes ]; then
-#     eval "$(oh-my-posh init zsh --config ~/.poshthemes/pico.omp.json)"
-# fi
-
 # Base16 Shell
 BASE16_SHELL_PATH="$HOME/.config/base16-shell"
 [ -n "$PS1" ] && \
@@ -52,8 +44,6 @@ export FZF_CTR_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# enable_poshtransientprompt
 
 # if tmux is executable and not inside a tmux session, then try to attach.
 # if attachment fails, start a new session
