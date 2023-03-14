@@ -5,5 +5,5 @@ Some personal dotfiles.
 ## Setup
 
 ```sh
-curl -o- https://raw.githubusercontent.com/AuditeMarlow/dotfiles/master/setup.sh | sh
+curl -o- https://raw.githubusercontent.com/AuditeMarlow/dotfiles/main/setup.sh | sh
 ```
