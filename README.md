@@ -4,6 +4,6 @@ Some personal dotfiles.
 
 ## Setup
 
-```sh
-curl -o- https://raw.githubusercontent.com/AuditeMarlow/dotfiles/main/setup.sh | sh
+```bash
+wget -qO- https://raw.githubusercontent.com/AuditeMarlow/dotfiles/main/dots.sh | bash -s install
 ```
