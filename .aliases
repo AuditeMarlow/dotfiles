@@ -7,7 +7,7 @@ alias grm='git branch -d $(git branch --merged | fzf --multi --reverse)'
 alias gpoh='git push -u origin HEAD'
 
 # docker-compose aliases
-alias dc='docker-compose'
+alias dc='docker compose'
 
 # vim-like hacks
 alias :q='exit'
