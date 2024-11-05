@@ -6,8 +6,8 @@ function! FocusBackStrategy(cmd) abort
 endfunction
 
 let test#custom_strategies = {'focus_back': function('FocusBackStrategy')}
-let test#neovim#term_position = 'vert'
-let test#php#phpunit#executable = 'docker-compose exec -T workspace phpunit'
+let test#neovim#term_position = 'horizontal rightbelow'
+let test#php#phpunit#executable = 'docker compose exec -T workspace vendor/bin/phpunit'
 let test#strategy = 'focus_back'
 
 nnoremap <silent> <leader>tt :TestNearest<CR>
