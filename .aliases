@@ -15,3 +15,8 @@ alias :e='vim'
 
 # other stuff
 alias path='echo -e ${PATH//:/\\n}'
+
+# php_tools=('phpbench' 'phpcs' 'phpstan' 'phpunit' 'sail')
+# for tool in "${php_tools[@]}"; do
+#   alias $tool="sh $([ -f $tool ] && echo $tool || echo vendor/bin/$tool)"
+# done
