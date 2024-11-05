@@ -8,3 +8,7 @@
 .php_cs.cache
 .rnd
 dive.log
+phpbench.txt
+phpcs.txt
+phpstan.txt
+phpunit.txt
