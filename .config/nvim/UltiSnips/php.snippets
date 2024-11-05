@@ -70,3 +70,7 @@ $this->mockSapiDriver([
 	new Response(200, [], json_encode([$0])),
 ]);
 endsnippet
+
+snippet dump
+dump(__METHOD__.':'.__LINE__, $0);
+endsnippet
