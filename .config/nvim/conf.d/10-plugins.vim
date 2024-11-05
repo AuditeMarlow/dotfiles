@@ -4,6 +4,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'dhruvasagar/vim-table-mode'
   Plug 'edkolev/tmuxline.vim'
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+  Plug 'github/copilot.vim'
   Plug 'hashivim/vim-vagrant'
   Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
   Plug 'itchyny/lightline.vim'
@@ -29,5 +30,6 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-surround'
+  Plug 'vim-vdebug/vdebug'
   Plug 'vim-test/vim-test'
 call plug#end()
