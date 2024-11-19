@@ -1,0 +1,23 @@
+{
+  "[php]": {
+    "coc.preferences.formatOnSave": true
+  },
+  "languageserver": {
+    "phpactor": {
+      "command": "phpactor",
+      "args": ["language-server"],
+      "trace.server": "verbose",
+      "filetypes": ["php"]
+    }
+  },
+  "phpactor.enable": true,
+  "phpactor.path": "~/.local/bin/phpactor",
+  "yaml.schemas": {
+    "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible.json": [
+      "**/handlers/*.yml",
+      "**/handlers/*.yaml",
+      "**/tasks/*.yml",
+      "**/tasks/*.yaml"
+    ]
+  }
+}

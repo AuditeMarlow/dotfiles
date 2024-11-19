@@ -1,9 +1,9 @@
 let g:coc_global_extensions = [
-      \ 'coc-go',
-      \ 'coc-json',
-      \ 'coc-phpls',
-      \ 'coc-yaml',
-      \ ]
+  \ 'coc-go',
+  \ 'coc-json',
+  \ 'coc-phpactor',
+  \ 'coc-yaml',
+\ ]
 
 " Use tab for trigger completion with characters ahead and navigate
 " NOTE: There's always complete item selected by default, you may want to enable

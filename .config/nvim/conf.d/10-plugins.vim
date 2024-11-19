@@ -1,7 +1,6 @@
 call plug#begin('~/.config/nvim/plugged')
 Plug 'SirVer/ultisnips'
 Plug 'chr4/nginx.vim'
-Plug 'dense-analysis/ale'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'edkolev/tmuxline.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
