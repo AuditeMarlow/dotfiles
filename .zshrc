@@ -36,7 +36,7 @@ BASE16_SHELL_PATH="${HOME}/.config/base16-shell"
 [ -f "${HOME}/.fzf.zsh" ] && source "${HOME}/.fzf.zsh"
 [ -f "${HOME}/.fzf.colors" ] && source "${HOME}/.fzf.colors"
 
-export FZF_DEFAULT_COMMAND='rg --files --sort path --hidden --glob "!.git"'
+export FZF_DEFAULT_COMMAND='rg --files --follow --sort path --hidden --glob "!.git"'
 export FZF_CTR_T_COMMAND="${FZF_DEFAULT_COMMAND}"
 
 [ -f /usr/share/nvm/init-nvm.sh ] && source /usr/share/nvm/init-nvm.sh
