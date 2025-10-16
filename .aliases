@@ -1,5 +1,5 @@
 # dots alias
-alias dots='/usr/bin/env git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dots='/usr/bin/env git --git-dir=${XDG_DATA_HOME:-$HOME/.local/share}/dotfiles/ --work-tree=$HOME'
 
 # git aliases
 alias nah='git checkout . && git clean -df'
