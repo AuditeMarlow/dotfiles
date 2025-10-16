@@ -32,9 +32,7 @@ confirm_install() {
     echo "Exiting."
     [[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1 # handle exits from shell or function but don't exit interactive shell
   fi
-
   echo "Installing dotfiles ..."
-  exit 1
 }
 
 install_dependencies() {
