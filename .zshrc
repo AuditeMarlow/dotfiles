@@ -1,11 +1,8 @@
 export GPG_TTY=$(tty)
 
-if [ -d "${HOME}/.cargo/bin" ]; then
-    export PATH="${PATH}:~/.cargo/bin"
-fi
-
-if [ -f "${HOME}/.local/share/zsh/antigen.zsh" ]; then
-    source "${HOME}/.local/share/zsh/antigen.zsh"
+ANTIGEN_ZSH_PATH="${XDG_DATA_HOME}/zsh/antigen.zsh"
+if [ -f "${ANTIGEN_ZSH_PATH}" ]; then
+    source "${ANTIGEN_ZSH_PATH}"
 
     antigen use oh-my-zsh
 
@@ -33,15 +30,14 @@ BASE16_SHELL_PATH="${XDG_DATA_HOME}/base16-shell"
     source "${BASE16_SHELL_PATH}/profile_helper.sh"
 
 [ -f "${HOME}/.aliases" ] && source "${HOME}/.aliases"
-[ -f "${HOME}/.fzf.zsh" ] && source "${HOME}/.fzf.zsh"
-[ -f "${HOME}/.fzf.colors" ] && source "${HOME}/.fzf.colors"
+[ -f "${XDG_CONFIG_HOME}/fzf/fzf.zsh" ] && source "${XDG_CONFIG_HOME}/fzf/fzf.zsh"
+[ -f "${XDG_CONFIG_HOME}/fzf/fzf.colors" ] && source "${XDG_CONFIG_HOME}/fzf/fzf.colors"
 
 export FZF_DEFAULT_COMMAND='rg --files --follow --sort path --hidden --glob "!.git"'
 export FZF_CTR_T_COMMAND="${FZF_DEFAULT_COMMAND}"
 
 [ -f /usr/share/nvm/init-nvm.sh ] && source /usr/share/nvm/init-nvm.sh
 
-export NVM_DIR="${XDG_DATA_HOME}/nvm"
 [ -s "${NVM_DIR}/nvm.sh" ] && \. "${NVM_DIR}/nvm.sh"  # This loads nvm
 [ -s "${NVM_DIR}/bash_completion" ] && \. "${NVM_DIR}/bash_completion"  # This loads nvm bash_completion
 
@@ -50,5 +46,3 @@ export NVM_DIR="${XDG_DATA_HOME}/nvm"
 [ -x "$(command -v tmux)" ] \
   && [ -z "${TMUX}" ] \
   && { tmux attach || tmux; } >/dev/null 2>&1
-
-export GOPATH="${HOME}/go"; export GOROOT="${HOME}/.go"; export PATH="${GOPATH}/bin:${PATH}"; # g-install: do NOT edit, see https://github.com/stefanmaric/g

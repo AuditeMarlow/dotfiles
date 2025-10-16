@@ -13,8 +13,11 @@ export DOCKER_CONFIG="${XDG_CONFIG_HOME}/docker"
 export GOMODCACHE="${XDG_CACHE_HOME}/go/mod"
 export GOPATH="${XDG_DATA_HOME}/go"
 export GOROOT="${XDG_OPT_HOME}/go"
+export NVM_DIR="${XDG_DATA_HOME}/nvm"
 
 # Path configuration
+export PATH="${GOPATH}/bin:${PATH}"
+export PATH="${CARGO_HOME}/bin:${PATH}"
 export PATH="${XDG_BIN_HOME}:${PATH}"
 
 # Load custom host configuration
