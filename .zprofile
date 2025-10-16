@@ -15,7 +15,7 @@ export GOPATH="${XDG_DATA_HOME}/go"
 export GOROOT="${XDG_OPT_HOME}/go"
 
 # Path configuration
-export PATH="${PATH}:${XDG_BIN_HOME}"
+export PATH="${XDG_BIN_HOME}:${PATH}"
 
 # Load custom host configuration
 if [ -f "${XDG_DATA_HOME}/zsh/profile.zsh" ]; then
