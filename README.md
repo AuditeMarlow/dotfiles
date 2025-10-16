@@ -9,6 +9,7 @@ Some personal dotfiles.
 ```bash
 curl -fsSL https://raw.githubusercontent.com/AuditeMarlow/dotfiles/main/dots.sh \
   | bash -s install
+```
 
 ### wget
 
