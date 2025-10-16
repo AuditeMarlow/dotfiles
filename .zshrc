@@ -27,7 +27,7 @@ if [ -f "${HOME}/.local/share/zsh/antigen.zsh" ]; then
 fi
 
 # Base16 Shell
-BASE16_SHELL_PATH="${HOME}/.config/base16-shell"
+BASE16_SHELL_PATH="${XDG_CONFIG_HOME}/base16-shell"
 [ -n "${PS1}" ] && \
   [ -s "${BASE16_SHELL_PATH}/profile_helper.sh" ] && \
     source "${BASE16_SHELL_PATH}/profile_helper.sh"
