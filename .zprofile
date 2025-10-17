@@ -5,7 +5,7 @@ export XDG_BIN_HOME="${XDG_BIN_HOME:-$HOME/.local/bin}"
 export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
 export XDG_OPT_HOME="${XDG_OPT_HOME:-$HOME/.local/opt}"
 export XDG_STATE_HOME="${XDG_STATE_HOME:-$HOME/.local/state}"
-export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:/run/user/${UID}}"
+export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/run/user/${UID}}"
 
 # Application-specific XDG Base Directory-applied configuration
 export CARGO_HOME="${XDG_DATA_HOME}/cargo"
