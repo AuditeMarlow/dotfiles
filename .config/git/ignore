@@ -6,6 +6,7 @@
 *tags.lock
 *tags.temp
 .php_cs.cache
+.phpactor.json
 .rnd
 dive.log
 phpbench.txt
