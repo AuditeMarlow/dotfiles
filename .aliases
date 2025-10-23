@@ -8,8 +8,6 @@ alias gpoh='git push -u origin HEAD'
 
 # docker compose aliases
 alias dc='docker compose'
-alias ws='docker compose exec workspace sh'
-alias tin='docker compose exec workspace php artisan tinker'
 
 # vim-like hacks
 alias :q='exit'
