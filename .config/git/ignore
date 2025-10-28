@@ -8,6 +8,7 @@
 .php_cs.cache
 .phpactor.json
 .rnd
+.scribe/
 dive.log
 phpbench.txt
 phpcs.txt
