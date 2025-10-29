@@ -10,6 +10,7 @@
       "filetypes": ["php"]
     }
   },
+  "Lua.diagnostics.globals": ["vim"],
   "phpactor.enable": true,
   "phpactor.path": "~/.local/bin/phpactor",
   "yaml.schemas": {
