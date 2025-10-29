@@ -1,5 +1,6 @@
--- vim.g.mapleader = "\\"
-
+vim.keymap.set("n", "<leader>ev", ":Files ~/.config/nvim<cr>", {
+    desc = "Open Neovim configuration files",
+})
 vim.keymap.set("n", "<leader>init", ":so ~/.config/nvim/init.lua<cr>", {
     desc = "Source init.lua",
 })
