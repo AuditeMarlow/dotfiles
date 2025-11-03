@@ -1,7 +1,11 @@
 return {
     "junegunn/fzf.vim",
     dependencies = {
-        { "junegunn/fzf", dir = "~/.local/share/fzf", build = "./install --all" },
+        {
+            "junegunn/fzf",
+            dir = "~/.local/share/fzf",
+            build = "./install --all",
+        },
     },
     config = function()
         -- Function to prompt for a search pattern and run :Rg
