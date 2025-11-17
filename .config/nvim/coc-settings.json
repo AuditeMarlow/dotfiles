@@ -8,6 +8,12 @@
       "args": ["language-server"],
       "trace.server": "verbose",
       "filetypes": ["php"]
+    },
+    "helm": {
+      "command": "helm_ls",
+      "args": ["serve"],
+      "filetypes": ["helm", "helmfile"],
+      "rootPatterns": ["Chart.yaml"]
     }
   },
   "Lua.diagnostics.globals": ["vim"],
