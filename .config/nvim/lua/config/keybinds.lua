@@ -29,7 +29,3 @@ vim.keymap.set("n", "<space>", ":nohlsearch<bar>:echo<cr>", {
 vim.keymap.set("n", "<leader>tws", ":%s/\\s\\+$//e<cr>", {
     desc = "Trim whitespace",
 })
-
-vim.keymap.set("t", "<c-o>", "<c-\\><c-n>", {
-    desc = "^o to enter normal mode in terminal split",
-})
