@@ -14,3 +14,5 @@ phpbench.txt
 phpcs.txt
 phpstan.txt
 phpunit.txt
+
+**/.claude/settings.local.json
