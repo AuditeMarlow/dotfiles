@@ -1,0 +1,239 @@
+# $XDG_DATA_HOME/k9s/plugins.yaml
+plugins:
+  #--- Create debug container for selected pod in current namespace
+  # See https://kubernetes.io/docs/tasks/debug/debug-application/debug-running-pod/#ephemeral-container
+  debug-share-processes:
+    shortCut: Shift-D
+    description: Add debug container that shares processes with its target
+    scopes:
+      - containers
+    command: bash
+    background: false
+    confirm: true
+    args:
+      - -c
+      - "kubectl debug -it -n=$NAMESPACE $POD --target=$NAME --image=nicolaka/netshoot:v0.11 --share-processes -- bash"
+  debug-copy:
+    shortCut: Ctrl-D
+    description: Add debug container using a copy of the pod
+    scopes:
+      - containers
+    command: bash
+    background: false
+    confirm: true
+    args:
+      - -c
+      - "kubectl debug -it -n=$NAMESPACE $POD --copy-to=$POD-debug --image=nicolaka/netshoot:v0.11 -- bash"
+
+  # move selected line to chosen resource in K9s, then:
+  # Shift-T (with confirmation) to toggle helm releases or kustomizations suspend and resume
+  # Shift-R (no confirmation) to reconcile a git source or a helm release or a kustomization
+  toggle-helmrelease:
+    shortCut: Shift-T
+    confirm: true
+    scopes:
+      - helmreleases
+    description: Toggle to suspend or resume a HelmRelease
+    command: bash
+    background: false
+    args:
+      - -c
+      - "flux --context $CONTEXT $([ $(kubectl --context $CONTEXT get helmreleases -n $NAMESPACE $NAME -o=custom-columns=TYPE:.spec.suspend | tail -1) = \"true\" ] && echo \"resume\" || echo \"suspend\") helmrelease -n $NAMESPACE $NAME |& less"
+  toggle-kustomization:
+    shortCut: Shift-T
+    confirm: true
+    scopes:
+      - kustomizations
+    description: Toggle to suspend or resume a Kustomization
+    command: bash
+    background: false
+    args:
+      - -c
+      - "flux --context $CONTEXT $([ $(kubectl --context $CONTEXT get kustomizations -n $NAMESPACE $NAME -o=custom-columns=TYPE:.spec.suspend | tail -1) = \"true\" ] && echo \"resume\" || echo \"suspend\") kustomization -n $NAMESPACE $NAME |& less"
+  reconcile-git:
+    shortCut: Shift-R
+    confirm: false
+    description: Flux reconcile
+    scopes:
+    - gitrepositories
+    command: bash
+    background: false
+    args:
+    - -c
+    - "flux --context $CONTEXT reconcile source git -n $NAMESPACE $NAME |& less"
+  reconcile-hr:
+    shortCut: Shift-R
+    confirm: false
+    description: Flux reconcile
+    scopes:
+    - helmreleases
+    command: bash
+    background: false
+    args:
+    - -c
+    - "flux --context $CONTEXT reconcile helmrelease -n $NAMESPACE $NAME |& less"
+  reconcile-helm-repo:
+    shortCut: Shift-Z
+    description: Flux reconcile
+    scopes:
+      - helmrepositories
+    command: bash
+    background: false
+    confirm: false
+    args:
+      - -c
+      - "flux reconcile source helm --context $CONTEXT -n $NAMESPACE $NAME |& less"
+  reconcile-oci-repo:
+    shortCut: Shift-Z
+    description: Flux reconcile
+    scopes:
+      - ocirepositories
+    command: bash
+    background: false
+    confirm: false
+    args:
+      - -c
+      - "flux reconcile source oci --context $CONTEXT -n $NAMESPACE $NAME |& less"
+  reconcile-ks:
+    shortCut: Shift-R
+    confirm: false
+    description: Flux reconcile
+    scopes:
+    - kustomizations
+    command: bash
+    background: false
+    args:
+    - -c
+    - "flux --context $CONTEXT reconcile kustomization -n $NAMESPACE $NAME |& less"
+  trace:
+    shortCut: Shift-B
+    confirm: false
+    description: Flux trace
+    scopes:
+      - all
+    command: bash
+    background: false
+    args:
+      - -c
+      - >-
+        resource=$(echo $RESOURCE_NAME | sed -E 's/ies$/y/' | sed -E 's/ses$/se/' | sed -E 's/(s|es)$//g')
+        flux
+        trace
+        --context $CONTEXT
+        --kind $resource
+        --api-version $RESOURCE_GROUP/$RESOURCE_VERSION
+        --namespace $NAMESPACE $NAME
+        | less -K
+
+  helm-values:
+    shortCut: V
+    confirm: false
+    description: Chart Values
+    scopes:
+    - helm
+    command: sh
+    background: false
+    args:
+    - -c
+    - "helm get values $COL-NAME -n $NAMESPACE --kube-context $CONTEXT | less"
+  helm-default-values:
+    shortCut: Shift-V
+    confirm: false
+    description: Chart Default Values
+    scopes:
+      - helm
+    command: sh
+    background: false
+    args:
+      - -c
+      # - "kubectl get secrets --context $CONTEXT -n $NAMESPACE sh.helm.release.v1.$COL-NAME.v$(helm history -n $NAMESPACE --kube-context $CONTEXT $COL-NAME | grep deployed | awk '{print $1}') -o yaml | yq e '.data.release' - | base64 -d | base64 -d | gunzip | jq -r '.chart.values' | yq -P | less"
+      - "kubectl get secrets --context $CONTEXT -n $NAMESPACE sh.helm.release.v1.$COL-NAME.v$(helm history -n $NAMESPACE --kube-context $CONTEXT $COL-NAME | tail -1 | awk '{print $1}') -o yaml | yq e '.data.release' - | base64 -d | base64 -d | gunzip | jq -r '.chart.values' | yq -P | less"
+
+  tinker-shell-pods:
+    shortCut: Ctrl-T
+    confirm: false
+    description: Open a Tinker shell
+    scopes:
+    - pods
+    command: kubectl
+    background: false
+    args:
+      - exec
+      - --context=$CONTEXT
+      - -it
+      - --namespace=$NAMESPACE
+      - $NAME
+      - --
+      - sh
+      - -c
+      - "HOME=/dev/shm php artisan tinker"
+
+  tinker-shell-containers:
+    shortCut: Ctrl-T
+    confirm: false
+    description: Open a Tinker shell
+    scopes:
+    - containers
+    command: kubectl
+    background: false
+    args:
+      - exec
+      - --context=$CONTEXT
+      - -it
+      - --namespace=$NAMESPACE
+      - $POD
+      - --container=$NAME
+      - --
+      - sh
+      - -c
+      - "HOME=/dev/shm php artisan tinker"
+
+  # Opens a shell to k3d container as root
+  k3d-root-shell:
+    shortCut: Shift-S
+    confirm: false
+    description: "Root Shell"
+    scopes:
+      - containers
+    command: bash
+    background: false
+    args:
+      - -c
+      - |
+        # Check dependencies
+        command -v jq >/dev/null || { echo -e "jq is not installed (https://stedolan.github.io/jq/)\nPress 'q' to close" | less; exit 1; }
+        # Extract node name and container ID
+        POD_DATA="$(kubectl get pod/$POD -o json --namespace $NAMESPACE --context $CONTEXT)"
+        # ${...} is used to prevent variable substitution by k9s (e.g. $POD_DATA)
+        NODE_NAME=$(echo "${POD_DATA}" | jq -r '.spec.nodeName')
+        CONTAINER_ID=$(echo "${POD_DATA}" | jq -r '.status.containerStatuses[] | select(.name == "$COL-NAME") | .containerID ' | grep -oP '(?<=containerd://).*')
+        echo "<<K9s-Root-Shell>> Pod: $NAMESPACE/$POD | Container: $COL-NAME (${NODE_NAME}/${CONTAINER_ID})"
+        # Credits for this approach to https://gist.github.com/mamiu/4944e10305bc1c3af84946b33237b0e9
+        docker exec -it $NODE_NAME sh -c "runc --root /run/containerd/runc/k8s.io/ exec -t -u 0 ${CONTAINER_ID} sh"
+  # Author: Daniel Rubin
+  # Get recommendations for CPU/Memory requests and limits using Robusta KRR
+  # Requires Prometheus in the Cluster and Robusta KRR (https://github.com/robusta-dev/krr) on your system
+  # Open K9s in deployments/daemonsets/statefulsets view, then:
+  # Shift-K to get recommendations
+  krr:
+    shortCut: Shift-K
+    description: Get krr
+    scopes:
+      - deployments
+      - daemonsets
+      - statefulsets
+    command: bash
+    background: false
+    confirm: false
+    args:
+      - -c
+      - |
+        LABELS=$(kubectl get $RESOURCE_NAME $NAME -n $NAMESPACE  --context $CONTEXT  --show-labels | awk '{print $NF}' | awk '{if(NR>1)print}')
+        TMPDIR=/var/tmp/ krr simple --cluster $CONTEXT --selector $LABELS
+        echo "Press 'q' to exit"
+        while : ; do
+        read -n 1 k <&1
+        if [[ $k = q ]] ; then
+        break
+        fi
+        done
